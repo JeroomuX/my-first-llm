@@ -45,7 +45,7 @@ for step in range(500):
         print(f"Step {step+1}, Loss: {loss:.4f}")
 
 # Test the model
-def generate_text(seed_text="The", length=10):
+def generate_text(seed_text="The", length=10, temperature=0.8):
     model.eval()
     words = seed_text.lower().split()
     for _ in range(length):
@@ -56,6 +56,10 @@ def generate_text(seed_text="The", length=10):
         # Get prediction
         with torch.no_grad():
             output = model(x)
+            logits = output[0, -1] / temperature
+
+            probs = torch.softmax(logits, dim=0)
+
             next_word_idx = output[0, -1].argmax().item()
         
         # Convert back to word and append
@@ -68,3 +72,5 @@ def generate_text(seed_text="The", length=10):
 print("\nGenerating text...")
 generated = generate_text("Python is", length=15)
 print(generated)
+
+torch.save(model.state_dict(), "my_llm_model.pth")

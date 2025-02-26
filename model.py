@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class TinyTransformer(nn.Module):
-    def __init__(self, vocab_size, d_model=32, nhead=2, num_layers=1):
+    def __init__(self, vocab_size, d_model=64, nhead=4, num_layers=2):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.transformer = nn.TransformerEncoder(

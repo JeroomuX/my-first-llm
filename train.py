@@ -39,7 +39,7 @@ def train_step():
 
 # Train for 100 steps
 print("Starting training...")
-for step in range(200):
+for step in range(500):
     loss = train_step()
     if (step + 1) % 10 == 0:  # Print every 10 steps
         print(f"Step {step+1}, Loss: {loss:.4f}")
@@ -66,5 +66,5 @@ def generate_text(seed_text="The", length=10):
 
 # Generate some text
 print("\nGenerating text...")
-generated = generate_text("Python is", length=10)
+generated = generate_text("Python is", length=15)
 print(generated)

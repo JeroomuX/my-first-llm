@@ -2,14 +2,20 @@ import torch
 
 # Simple dataset for testing
 training_text = """
-Python is a great programming language.
-I love coding and building projects.
-Learning machine learning is exciting.
-Neural networks can recognize patterns.
-Data science helps us understand information.
-Programming requires practice and patience.
-Building models is a creative process.
-Code can solve many different problems.
+Python is a versatile programming language used by beginners and experts.
+Many data scientists prefer Python for its clear syntax and powerful libraries.
+Machine learning models need data to learn patterns effectively.
+Neural networks can solve complex problems through training.
+Programming is both a science and an art that requires practice.
+Good code should be readable, efficient, and well-documented.
+Software development involves planning, coding, testing, and maintenance.
+Computers process information based on the instructions we provide.
+Learning to code opens up many career opportunities in technology.
+Algorithms are step-by-step procedures for solving specific problems.
+Data structures help organize information in efficient ways.
+Python libraries like NumPy and Pandas make data analysis easier.
+TensorFlow and PyTorch are popular frameworks for building neural networks.
+
 """
 
 def prepare_data():
